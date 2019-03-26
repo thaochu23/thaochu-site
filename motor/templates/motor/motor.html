@@ -1,0 +1,26 @@
+{% extends 'pages/base.html' %}
+{% block title %}
+<title>Device</title>
+{% endblock %}
+{% block content_panel %}
+<div class="panel-heading">
+	<div class="panel-title">
+		<h3>Danh sách thiết bị</h3>
+	</div>
+</div>
+<div class="panel-body">
+	{% for post in posts %}
+		<center>{{post.image1}}</center>
+		{{post.body1}}
+		<center>{{post.image2}}</center>
+		{{post.body2}}
+		
+	{% endfor %}
+</div>
+{% endblock %}
+{% block slider_body %}
+	{%for device in Devices %}
+		<h4><a href="{{device.id}}">{{device.name}}</a></h4>
+		<h4><a href="/file-upload/">Nhận dạng chữ số viết tay</a></h4>
+	{% endfor %}
+{% endblock %}

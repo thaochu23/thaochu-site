@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>Base</title>
+    {% endblock %}
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="header">
+		<div class="navbar navbar-inverse navbar-static-top">
+	        <div class="row">
+	            <ul class="nav nav-pills">
+	                <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+	                <li><a href="#"><span class="glyphicon glyphicon-book"></span>Huong dan</a></li>
+	                <!--<li><a href="/register"><span class="glyphicon glyphicon-cog"></span> Đăng ký</a></li>-->
+	                <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Đăng nhập</a></li>
+	                <li><a href="/logout"><span class="glyphicon glyphicon-off"></span>Thoát</a></li>
+	            </ul>   
+	        </div>       
+	    </div>
+	</div>
+    
+    <!---->
+    <div class="content">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-9">
+    				<div class="panel panel-primary">
+    					{% block content_panel %}
+    					{% endblock %}
+    				</div>
+    			</div>
+    			<div style="">
+    				<div class="col-md-3" id="slider">
+	    				<div class="panel panel-success">
+	    					<div class="panel-heading">
+	    						<div class="panel-title">
+	    							<h3>Bộ điều khiển</h3>
+	    						</div>
+	    					</div>
+	    					<div class="panel-body">
+	    						{% block slider_body %}
+	    						<p>
+	    							<h4>Bạn phải Đăng nhập mới điều khiển được thiết bị!!!</h4>
+	    						</p>
+	    						{% endblock %}
+	    					</div>
+	    				</div>
+	    			</div>
+    			</div>
+    			
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>

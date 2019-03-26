@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %}
+{% block title %}
+<title>Login</title>
+{% endblock %}
+{% block content_panel %}
+<div class="panel-heading">
+	<div class="panel-title">
+		<h3>Login</h3>
+	</div>
+</div>
+
+<div class="panel-body">
+	<center>
+		<form method="POST" action="">
+			{% csrf_token %}
+			<button type="submit">Dang xuat</button>
+		</form>
+	</center>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'pages/base.html' %}
+{% block title %}
+<title>Classification</title>
+{% endblock %}
+{% block content_panel %}
+<div class="panel-heading">
+	<div class="panel-title">
+		<h3>Nhận dạng chữ số viết tay</h3>
+	</div>
+</div>
+<div class="panel-body">
+    <form action="" method="POST" enctype="multipart/form-data"> 
+        {% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+{% endblock %}
+{% block slider_body %}
+    
+    <h4><a href="/file-upload/"></a></h4>
+{% endblock %}
+
+<form action="" method="POST" enctype="multipart/form-data"> 
+    {% csrf_token %} 
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>

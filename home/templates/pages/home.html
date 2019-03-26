@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+{% block content_panel %}
+<div class="panel-heading">
+	<div class="panel-title">
+		<h3>Tin tức công nghệ</h3>
+	</div>
+</div>
+<div class="panel-body">
+	{% for post in Posts %}
+		<h4><a href="{{post.id}}">{{post.title}}</a></h4>
+		{{post.quote1}}
+		{{post.quote2}}
+	{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'pages/base.html' %}
+{% block title %}
+<title>Action</title>
+{% endblock %}
+{% block content_panel %}
+<div class="panel-heading">
+	<div class="panel-title">
+		<h3>{{device_action.name}}</h3>
+	</div>
+</div>
+<div class="panel-body">
+	<form action="" method="POST">
+		{% csrf_token %}
+		<input class="btn btn-success" type="submit" name="on" value="ON" />
+		<input class ="btn btn-danger" type="submit" name="off" value="OFF">
+	</form><br><br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Tên thiết bị</th>
+				<th>Trạng thái hoạt động</th>
+				<th>Thời gian</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{device_action.id}}</td>
+				<td>{{device_action.name}}</td>
+				<td>{{device_action.state}}</td>
+				<td>{{device_action.date|date:"d-m-Y"}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock %}
+{% block slider_body %}
+	<h4><a href="{{device_action.id}}">{{device_action.name}}</a></h4>
+	<h4><a href="/file-upload/">Nhận dạng chữ số viết tay</a></h4>
+{% endblock %}

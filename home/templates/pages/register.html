@@ -1,0 +1,22 @@
+{% extends 'pages/base.html' %}
+{% block title %}
+<title>Account</title>
+{% endblock %}
+{% block content_panel %}
+<div class="panel-heading">
+	<div class="panel-title">
+		<h3>Create accounts</h3>
+	</div>
+</div>
+
+<div class="panel-body">
+	<center>
+		<form method="POST" action="">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Đăng ký">
+		</form>
+	</center>
+</div>
+
+{% endblock %}
